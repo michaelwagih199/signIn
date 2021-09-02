@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "97381284155",
+    "project_id": "hrapplication-a91d5",
+    "storage_bucket": "hrapplication-a91d5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97381284155:android:6a4db505e41689ac199f1e",
+        "android_client_info": {
+          "package_name": "com.polimigo.hr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97381284155-2kuk2um0jem5b4h3lfo4h64bqifskcea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABOavra5hUfF3tc3gke5fNt5x3UnuvD_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97381284155-2kuk2um0jem5b4h3lfo4h64bqifskcea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
