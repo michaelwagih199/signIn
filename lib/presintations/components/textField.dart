@@ -7,14 +7,18 @@ class TextFormFieldC extends StatelessWidget {
   Color fontColor;
   Color backgroundColor;
   Icon icon;
+  TextEditingController controller;
+  bool obscureText;
 
-  TextFormFieldC(
-    this.backgroundColor,
-    this.fontSize,
-    this.fontColor,
-    this.hintText,
-    this.icon,
-  );
+  TextFormFieldC({
+    required this.obscureText,
+    required this.backgroundColor,
+    required this.fontSize,
+    required this.fontColor,
+    required this.hintText,
+    required this.icon,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,9 @@ class TextFormFieldC extends StatelessWidget {
       child: Theme(
         data: Theme.of(context).copyWith(splashColor: Colors.transparent),
         child: TextField(
+          obscureText: obscureText,
           autofocus: false,
+          controller: controller,
           style: GoogleFonts.comfortaa(
               textStyle: TextStyle(fontSize: fontSize, color: fontColor)),
           decoration: InputDecoration(

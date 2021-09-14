@@ -1,21 +1,26 @@
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hr/routes.dart';
+import 'package:hr/presintations/routes/routes.dart';
 import 'package:hr/themes/style.dart';
 
-void main() async{
+void main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-   WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-    .then((_) {
-      runApp(new HrApp());
-    });
+      .then((_) {
+    runApp(HrApp(
+      router: AppRouter(),
+    ));
+  });
 }
 
 class HrApp extends StatelessWidget {
+  final AppRouter router;
+  const HrApp({required this.router}) : super();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,8 +29,7 @@ class HrApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: appTheme(),
-          initialRoute: '/',
-          routes: routes,
+          onGenerateRoute: router.generateRoute,
         ),
       ),
     );

@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:hr/components/appBarButton.dart';
-import 'package:hr/components/textHeader.dart';
-import 'package:hr/screens/signIn/components/ArchSignIncustomPaint.dart';
-import 'package:hr/screens/signIn/components/IconSignIn.dart';
+import 'package:hr/presintations/components/appBarButton.dart';
+import 'package:hr/presintations/components/textHeader.dart';
+import 'package:hr/presintations/screens/signIn/components/ArchSignIncustomPaint.dart';
+import 'package:hr/presintations/screens/signIn/components/IconSignIn.dart';
+
 import 'package:hr/themes/appStyleConfig.dart';
+import 'package:hr/utilities/constans/strings.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -15,7 +17,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   void initState() {
     super.initState();
@@ -71,8 +72,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Container(
                       margin: EdgeInsets.fromLTRB(20, 10, 20, 8),
-                      child: CustomAppButton('Attendance', 24,
-                          AppStyleConfig.whiteColor, () => {}),
+                      child: CustomAppButton(
+                          'Attendance registration',
+                          24,
+                          AppStyleConfig.whiteColor,
+                          () => {
+                                Navigator.of(context)
+                                    .pushNamed(ATTENDANCE_ROUTE)
+                              }),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(20, 10, 20, 8),
+                      child: CustomAppButton(
+                          'Check out',
+                          24,
+                          AppStyleConfig.whiteColor,
+                          () => {
+                                Navigator.of(context)
+                                    .pushNamed(ATTENDANCE_ROUTE)
+                              }),
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(20, 10, 20, 8),
